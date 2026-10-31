@@ -224,18 +224,6 @@ class _ArcadePainter extends CustomPainter {
     }
   }
 
-  void _star(Canvas cv, Offset c, double r, Paint p) {
-    final path = Path();
-    for (int i = 0; i < 10; i++) {
-      final ang = -1.5708 + i * 0.6283;
-      final rr = i.isEven ? r : r * 0.45;
-      final pt = Offset(c.dx + rr * cos(ang), c.dy + rr * sin(ang));
-      if (i == 0) path.moveTo(pt.dx, pt.dy); else path.lineTo(pt.dx, pt.dy);
-    }
-    path.close();
-    cv.drawPath(path, p);
-  }
-
   @override
   void paint(Canvas canvas, Size size) {
     final e = engine;
